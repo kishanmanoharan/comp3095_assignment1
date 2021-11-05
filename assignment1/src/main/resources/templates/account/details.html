@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>INFO</title>
+</head>
+<body>
+
+<h1>INFO</h1>
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Email</th>
+        <th>Pass</th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td><p th:text="*{user.id}"></p></td>
+        <td><p th:text="*{user.email}"></p></td>
+        <td><p th:text="*{user.password}"></p></td>
+    </tr>
+</table>
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Ingredients</th>
+        <th>Directions</th>
+        <th>User</th>
+    </tr>
+    <tr th:each="recipe : ${recipes}">
+        <td><p th:text="*{recipe.id}"></p></td>
+        <td><p th:text="*{recipe.name}"></p></td>
+        <td><p th:text="*{recipe.ingredients}"></p></td>
+        <td><p th:text="*{recipe.directions}"></p></td>
+        <td><p th:text="*{recipe.date}"></p></td>
+        <td><p th:text="*{recipe.user.getId()}"></p></td>
+    </tr>
+</table>
+</body>
+</html>
